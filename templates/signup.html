@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CodePen - Log-in</title>
+
+  <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+
+    <link rel="stylesheet" href="{{static_url("css/style2.css")}}" media="screen" type="text/css" />
+    <link rel="icon" type="image/png" href="{{static_url("assets/ico/favicon.png") }}" />
+</head>
+
+<body>
+
+  <div class="login-card">
+    <h1>Sign Up</h1><br>
+  <form action="/register" method="get">
+    <input type="text" name="username" placeholder="Username">
+    <input type="text" name="full_name" placeholder="Full Name">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="Password">
+    <input type="password" name="conformpassword" placeholder="Confirm Password">
+    <a href="/"><input type="submit" name="signup" class="login login-submit" value="Sign up"></a>
+  </form>
+  <div>
+    {% if result==1 %}
+      <h4>user has created successfully</h4>
+    {% elif result==2 %}
+      <h4>{{error2}}</h4>
+    {% elif result==3 %}
+      <h4>{{error3}}</h4>
+    {% elif result==4 %}
+      <h4>{{error4}}</h4>
+    {% else %}
+      <h4>{{error5}}</h4>
+    {% end %}
+  </div>
+</div>
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
+</body>
+
+</html>

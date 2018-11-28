@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>CodePen - Log-in</title>
+
+  <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+
+    <link rel="stylesheet" href="{{static_url("css/style2.css")}}" media="screen" type="text/css" />
+    <link rel="icon" type="image/png" href="{{static_url("assets/ico/favicon.png") }}" />
+</head>
+
+<body>
+
+  <div class="login-card">
+    <h1>Log-in</h1><br>
+  <form action="/" method="get">
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <a href="/home"><input type="submit" name="login" class="login login-submit" value="login"></a>
+  </form>
+
+  <div class="login-help">
+    <a href="/register"><b>Register</a>
+  </div>
+  <div>
+    {% if login==1 %}
+      <h4>you have successfully login</h4>
+    {% elif login==2 %}
+      <h4>{{error1}}</h4>
+    {% elif login==3 %}
+      <h4>{{error2}}</h4>
+    {% elif login==login %}
+      <h4>{{error3}}</h4>
+    {% end %}
+  </div>
+</div>
+
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
+</body>
+
+</html>
